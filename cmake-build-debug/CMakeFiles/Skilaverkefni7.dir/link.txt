@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Skilaverkefni7.dir/main.cpp.o CMakeFiles/Skilaverkefni7.dir/FlightBooking.cpp.o CMakeFiles/Skilaverkefni7.dir/Functions.cpp.o CMakeFiles/Skilaverkefni7.dir/SaveFile.cpp.o  -o Skilaverkefni7 
