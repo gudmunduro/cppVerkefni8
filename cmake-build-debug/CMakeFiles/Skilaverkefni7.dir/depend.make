@@ -4,6 +4,7 @@
 CMakeFiles/Skilaverkefni7.dir/FlightBooking.cpp.o: ../FlightBooking.cpp
 CMakeFiles/Skilaverkefni7.dir/FlightBooking.cpp.o: ../FlightBooking.h
 CMakeFiles/Skilaverkefni7.dir/FlightBooking.cpp.o: ../Functions.cpp
+CMakeFiles/Skilaverkefni7.dir/FlightBooking.cpp.o: ../SaveFile.h
 
 CMakeFiles/Skilaverkefni7.dir/Functions.cpp.o: ../Functions.cpp
 
@@ -13,5 +14,6 @@ CMakeFiles/Skilaverkefni7.dir/SaveFile.cpp.o: ../SaveFile.h
 
 CMakeFiles/Skilaverkefni7.dir/main.cpp.o: ../FlightBooking.h
 CMakeFiles/Skilaverkefni7.dir/main.cpp.o: ../Functions.cpp
+CMakeFiles/Skilaverkefni7.dir/main.cpp.o: ../SaveFile.h
 CMakeFiles/Skilaverkefni7.dir/main.cpp.o: ../main.cpp
 

@@ -43,6 +43,14 @@ bool FlightBooking::isAllowedReservation(int reservation)
     return ((float)reservation) / ((float)capacity) < 1.05; // Skilar true eða false eftir því hvort það sé yfir leyfilega magninu sem er 105%
 }
 
+int FlightBooking::getReserved() {
+    return reserved;
+}
+
+int FlightBooking::getCapacity() {
+    return capacity;
+}
+
 // Operators
 
 bool FlightBooking::operator < (FlightBooking *compare_to)
@@ -75,14 +83,10 @@ bool FlightBooking::operator != (FlightBooking *compare_to)
     return this->id != compare_to->id;
 }
 
-ostream& FlightBooking::operator << (ostream& stream)
-{
-    //printStatus();
-    //return stream;
-    const float seatsReserved = ((float)reserved) / ((float)capacity) * 100.0f;
-    return stream << "Flight " << id << " : " << reserved << "/" << capacity << " (" << seatsReserved << "%) seats reserved";
+ostream& operator<<(ostream& ostr, FlightBooking &booking) {
+    const float seatsReserved = ((float)booking.getReserved()) / ((float)booking.getCapacity()) * 100.0f;
+    return ostr << "Flight " << booking.id << " : " << booking.getReserved() << "/" << booking.getCapacity() << " (" << seatsReserved << "%) seats reserved";
 }
-
 
 // FlightBooking list
 
@@ -207,7 +211,7 @@ void FlightBookingList::remove(int id)
     }
 }
 
-void FlightBookingList::saveToFile()
+/*void FlightBookingList::saveToFile()
 {
     SaveFile *saveFile = new SaveFile("flights.conf");
 
@@ -233,4 +237,4 @@ void FlightBookingList::loadFromFile()
         FlightBooking *booking = new FlightBooking(stoi(row[0]), stoi(row[1]), stoi(row[2]));
         add(stoi(row[0], booking));
     }
-}
+}*/

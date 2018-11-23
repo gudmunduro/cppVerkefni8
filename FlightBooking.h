@@ -12,6 +12,7 @@
 class FlightBooking {
 public:
     FlightBooking(int id, int capacity, int reserved);
+    int id;
     void printStatus();
     bool reserveSeats(int number_ob_seats);
     bool canceReservations(int number_ob_seats);
@@ -24,10 +25,8 @@ public:
     bool operator <= (FlightBooking *compare_to);
     bool operator == (FlightBooking *compare_to);
     bool operator != (FlightBooking *compare_to);
-    ostream& operator << (ostream& stream);
 private:
     bool isAllowedReservation(int reservation);
-    int id;
     int capacity;
     int reserved;
 };
@@ -53,8 +52,8 @@ public:
     bool has(int id);
     void remove(int id);
     void printAll();
-    void saveToFile();
-    void loadFromFile();
+    //void saveToFile();
+    //void loadFromFile();
 };
 
 

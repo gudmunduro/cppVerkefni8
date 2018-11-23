@@ -70,7 +70,7 @@ void processCommand(string command, string *arguments)
     }
     if (command == "save")
     {
-        flightBookings->saveToFile();
+        // flightBookings->saveToFile();
     }
 }
 
@@ -107,7 +107,8 @@ int main() {
         processCommand(cmdSplit[0], arguments);
 
         if (flightBookings->has(stoi(arguments[0])))
-            flightBookings->get(stoi(arguments[0]))->printStatus(); // Ef flugið með þetta id er til prentar það status
+            // flightBookings->get(stoi(arguments[0]))->printStatus(); // Ef flugið með þetta id er til prentar það status
+            cout << flightBookings->get(stoi(arguments[0]));
     }
 
     return 0;
