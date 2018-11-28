@@ -52,8 +52,8 @@ public:
     bool has(int id);
     void remove(int id);
     void printAll();
-    //void saveToFile();
-    //void loadFromFile();
+    void saveToFile();
+    void loadFromFile();
 };
 
 

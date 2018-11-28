@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/FlightBooking.cpp
-FlightBooking.h
-/home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/FlightBooking.h
-FlightBooking.h
-/home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/FlightBooking.h
-
 /home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/FlightBooking.h
 Functions.cpp
 /home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/Functions.cpp
@@ -35,6 +29,12 @@ fstream
 -
 vector
 -
+Functions.cpp
+/home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/Functions.cpp
+
+/home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/main.cpp
+FlightBooking.h
+/home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/FlightBooking.h
 Functions.cpp
 /home/gudmundur/Projects/Forritun/Cpp/Skilaverkefni7/Functions.cpp
 

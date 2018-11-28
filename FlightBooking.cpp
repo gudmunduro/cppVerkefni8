@@ -211,16 +211,16 @@ void FlightBookingList::remove(int id)
     }
 }
 
-/*void FlightBookingList::saveToFile()
+void FlightBookingList::saveToFile()
 {
-    SaveFile *saveFile = new SaveFile("flights.conf");
+    SaveFile *saveFile = new SaveFile("flights.csv");
 
     FlightBookingElement *current = first;
     int currentColumn = 0;
     while (current != nullptr) {
-        saveFile->setColumnValue(currentColumn, 0, to_string(current->id));
-        saveFile->setColumnValue(currentColumn, 1, to_string(current->booking->getReserved()));
-        saveFile->setColumnValue(currentColumn, 2, to_string(current->booking->getCapacity()));
+        saveFile->setColumnValue(currentColumn, 0, to_string(current->id)); // Setur id fyrir save fileinn
+        saveFile->setColumnValue(currentColumn, 1, to_string(current->booking->getCapacity())); // Setur reserved
+        saveFile->setColumnValue(currentColumn, 2, to_string(current->booking->getReserved())); // Setur capacity
 
         current = current->next;
         currentColumn++;
@@ -231,10 +231,11 @@ void FlightBookingList::remove(int id)
 
 void FlightBookingList::loadFromFile()
 {
-    SaveFile *saveFile = new SaveFile("flights.conf");
+    SaveFile *saveFile = new SaveFile("flights.csv");
     saveFile->read();
-    for (auto row : saveFile->getValues()) {
-        FlightBooking *booking = new FlightBooking(stoi(row[0]), stoi(row[1]), stoi(row[2]));
-        add(stoi(row[0], booking));
+    for (int row = 0; row < 100; row++ /*auto row : saveFile->getValues()*/) {
+        if (saveFile->values[row][0].empty()) break;
+        FlightBooking *booking = new FlightBooking(stoi(saveFile->values[row][0]), stoi(saveFile->values[row][1]), stoi(saveFile->values[row][2]));
+        add(stoi(saveFile->values[row][0]), booking);
     }
-}*/
+}

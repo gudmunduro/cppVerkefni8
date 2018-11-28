@@ -33,6 +33,32 @@ void processCommand(string command, string *arguments)
 {
     if (command == "quit") return;
 
+    if (command == "save")
+    {
+        flightBookings->saveToFile();
+        return;
+    }
+
+    if (command == "load")
+    {
+        flightBookings->loadFromFile();
+        return;
+    }
+
+    if (command == "printall")
+    {
+        flightBookings->printAll();
+        return;
+    }
+
+    // Commands með arguments
+
+    if (arguments[0].empty())
+    {
+        /* Hætta við ef command hefur engin arguments */
+        printError(3);
+    }
+
     int id = stoi(arguments[0]);
 
     if (command == "create")
@@ -68,24 +94,21 @@ void processCommand(string command, string *arguments)
         }
         else printError(1);
     }
-    if (command == "save")
-    {
-        // flightBookings->saveToFile();
-    }
 }
 
 int main() {
 
     flightBookings = new FlightBookingList();
+    flightBookings->loadFromFile();
 
-    string command = "";
+    string command;
 
     while (command != "quit")
     {
         cout << "What would you like to do?: ";
         getline(cin, command);
 
-        if (command == "")
+        if (command.empty())
         {
             /* Hætta við ef ekkert er skirfað */
             printError(3);
@@ -97,18 +120,10 @@ int main() {
         SplitString(command, ' ', cmdSplit);
         createArgumentsArray(cmdSplit, arguments); // Taka öll arguments og setja í sér array
 
-        if (arguments[0] == "")
-        {
-            /* Hætta við ef command hefur engin arguments */
-            printError(3);
-            continue;
-        }
-
         processCommand(cmdSplit[0], arguments);
 
-        if (flightBookings->has(stoi(arguments[0])))
-            // flightBookings->get(stoi(arguments[0]))->printStatus(); // Ef flugið með þetta id er til prentar það status
-            cout << flightBookings->get(stoi(arguments[0]));
+        if (!arguments[0].empty() && flightBookings->has(stoi(arguments[0])))
+            flightBookings->get(stoi(arguments[0]))->printStatus(); // Ef flugið með þetta id er til prentar það status
     }
 
     return 0;

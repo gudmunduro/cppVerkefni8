@@ -14,13 +14,13 @@ using namespace Functions;
 class SaveFile {
 private:
     string filename;
-    vector <vector<string>> values;
 public:
     SaveFile(string name);
-    void setColumnValue(int row, int column, string value);
+    bool setColumnValue(int row, int column, string value);
     void write();
     void read();
-    vector <vector<string>> getValues();
+    // vector <vector<string>> getValues();
+    string values[50][100];
 };
 
 
